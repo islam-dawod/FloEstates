@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FloEstates: منصتك العقارية الأولى وخيارك الأمثل</title>
+<meta name="description" content="FloEstates - شريكك الاستراتيجي لنشاط عقاري أكثر نمواً ونجاحاً. مشاريع عقارية مرموقة، إعادة بيع، وأراضٍ حصرية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy:#132F66;
+    --navy-2:#1c3f82;
+    --bg:#f2f6fc;
+    --text:#4f5e64;
+    --heading:#132F66;
+    --green:#2bb673;
+    --orange:#f5901e;
+    --red:#e04b5a;
+    --blue:#3b82f6;
+    --card:#ffffff;
+    --border:#e7eef7;
+    --shadow:0 10px 30px rgba(19,47,102,.08);
+    --shadow-lg:0 18px 50px rgba(19,47,102,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Readex Pro",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .sec{padding:70px 0}
+  .sec-title{
+    font-size:2rem;font-weight:700;color:var(--heading);
+    display:flex;align-items:center;gap:14px;justify-content:flex-start;
+    margin-bottom:38px;
+  }
+  .sec-title::after{content:"";width:4px;height:34px;background:var(--navy);border-radius:4px;order:-1}
+  .sec-title.center{justify-content:center}
+  .muted{color:#7b8a91}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--navy);color:#fff;border:none;cursor:pointer;
+    padding:12px 26px;border-radius:30px;font-family:inherit;font-weight:500;
+    font-size:.95rem;transition:.25s;
+  }
+  .btn:hover{background:var(--navy-2);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.5rem;color:var(--navy)}
+  .logo .mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--navy),#2b5bc4);display:grid;place-items:center;color:#fff;font-size:1.2rem;box-shadow:var(--shadow)}
+  .logo b{color:var(--navy)}
+  .logo span{color:var(--orange)}
+  .menu{display:flex;align-items:center;gap:26px;font-size:.92rem;font-weight:500}
+  .menu a{color:var(--heading);transition:.2s}
+  .menu a:hover{color:var(--orange)}
+  .menu a.hot{color:var(--orange);position:relative}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:#fff;display:grid;place-items:center;color:var(--navy);cursor:pointer;transition:.2s}
+  .icon-btn:hover{background:var(--navy);color:#fff}
+  .burger{display:none;font-size:1.4rem;color:var(--navy);background:none;border:none;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;min-height:560px;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(10,22,50,.92),rgba(13,30,66,.6)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover;}
+  .hero-inner{position:relative;z-index:2;max-width:640px}
+  .hero h1{font-size:2.7rem;line-height:1.35;font-weight:700;margin-bottom:22px}
+  .hero p{font-size:1.12rem;color:#d7e2f3;margin-bottom:30px;font-weight:300}
+  .hero .btn.lg{padding:15px 34px;font-size:1.05rem}
+  .hero-search{margin-top:34px;background:#fff;border-radius:16px;padding:10px;display:flex;gap:8px;box-shadow:var(--shadow-lg);flex-wrap:wrap}
+  .hero-search select,.hero-search input{flex:1;min-width:120px;border:none;background:#f4f7fc;color:var(--text);font-family:inherit;padding:13px 16px;border-radius:10px;font-size:.92rem}
+  .hero-search .btn{border-radius:10px}
+
+  /* INTRO strip */
+  .intro{background:#fff;border-bottom:1px solid var(--border)}
+  .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .intro-card{padding:28px;border-radius:16px;background:var(--bg);border:1px solid var(--border)}
+  .intro-card i{font-size:1.6rem;color:var(--navy);background:#e7eefb;width:54px;height:54px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px}
+  .intro-card h3{color:var(--heading);font-size:1.15rem;margin-bottom:8px;font-weight:600}
+
+  /* CATEGORIES */
+  .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  .cat{background:#fff;border-radius:16px;padding:30px 16px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:.28s;cursor:pointer}
+  .cat:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .cat i{font-size:2rem;color:var(--navy);margin-bottom:14px}
+  .cat h4{font-size:.95rem;color:var(--heading);font-weight:600}
+
+  /* CARDS GRID */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .pcard{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:.28s}
+  .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .pcard .ph{position:relative;height:210px;overflow:hidden}
+  .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .pcard:hover .ph img{transform:scale(1.07)}
+  .badge{position:absolute;top:12px;color:#fff;padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:600}
+  .badge.feat{right:12px;background:var(--green)}
+  .badge.excl{right:12px;background:var(--navy)}
+  .badge.disc{left:12px;background:var(--orange)}
+  .pbody{padding:18px 20px}
+  .price{color:var(--navy);font-weight:700;font-size:1.3rem;margin-bottom:6px}
+  .pbody h3{font-size:1rem;color:var(--heading);font-weight:600;margin-bottom:12px;line-height:1.6}
+  .loc{display:flex;align-items:center;gap:7px;color:#7b8a91;font-size:.86rem;margin-bottom:14px}
+  .loc i{color:var(--orange)}
+  .specs{display:flex;gap:18px;border-top:1px solid var(--border);padding-top:14px;color:#56656c;font-size:.85rem}
+  .specs span{display:flex;align-items:center;gap:6px}
+  .specs i{color:var(--navy)}
+  .pay{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:14px;margin-top:4px;font-size:.85rem}
+  .pay .tag{color:var(--green);font-weight:600}
+  .center-cta{text-align:center;margin-top:40px}
+
+  /* STATS */
+  .stats{background:linear-gradient(120deg,#0f2452,#1b3c7e);color:#fff}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;display:flex;align-items:center;gap:18px;position:relative;overflow:hidden}
+  .stat::before{content:"";position:absolute;top:0;right:0;left:0;height:4px}
+  .stat.c1::before{background:var(--blue)} .stat.c2::before{background:var(--green)}
+  .stat.c3::before{background:var(--red)} .stat.c4::before{background:var(--orange)}
+  .stat .num{font-size:2rem;font-weight:700}
+  .stat .lbl{color:#c4d4ee;font-size:.92rem}
+  .stat .si{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:1.4rem;margin-right:auto}
+
+  /* FEATURES */
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .fcard{display:flex;gap:18px;background:#fff;border-radius:16px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--border)}
+  .fcard .fi{flex:none;width:58px;height:58px;border-radius:14px;background:#e7eefb;color:var(--navy);display:grid;place-items:center;font-size:1.5rem}
+  .fcard h3{color:var(--heading);font-size:1.15rem;margin-bottom:8px;font-weight:600}
+
+  /* FAQ */
+  .faq-item{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;color:var(--heading);gap:14px}
+  .faq-q i{transition:.3s;color:var(--navy)}
+  .faq-item.open .faq-q i{transform:rotate(180deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:.35s;padding:0 24px}
+  .faq-item.open .faq-a{max-height:300px;padding:0 24px 22px}
+
+  /* TESTIMONIALS */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tcard{background:#fff;border-radius:16px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--border)}
+  .tcard .stars{color:#f5b50a;margin-bottom:12px}
+  .tcard p{font-size:.92rem;margin-bottom:18px}
+  .tuser{display:flex;align-items:center;gap:12px}
+  .tuser .av{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:600}
+  .tuser b{color:var(--heading);display:block;font-size:.95rem}
+  .tuser small{color:#9aa7ad}
+
+  /* CTA */
+  .cta{background:linear-gradient(120deg,var(--navy),#2b5bc4);color:#fff;text-align:center;border-radius:24px;padding:60px 30px;margin:0 20px}
+  .cta h2{font-size:2rem;margin-bottom:14px;font-weight:700}
+  .cta p{color:#d7e2f3;max-width:600px;margin:0 auto 26px}
+  .cta .btn{background:#fff;color:var(--navy)}
+  .cta .btn:hover{background:var(--orange);color:#fff}
+
+  /* FOOTER */
+  footer{background:#0e2047;color:#b5c9dd;padding:60px 0 24px;margin-top:70px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
+  footer h4{color:#fff;margin-bottom:18px;font-size:1.05rem}
+  footer .logo{color:#fff;margin-bottom:16px}
+  footer .logo b{color:#fff}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:10px;font-size:.9rem}
+  footer ul li a:hover{color:var(--orange)}
+  .foot-contact p{font-size:.9rem;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
+  .foot-contact i{color:var(--orange);margin-top:5px}
+  .socials{display:flex;gap:10px;margin-top:16px}
+  .socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:#fff;transition:.2s}
+  .socials a:hover{background:var(--orange)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;text-align:center;font-size:.85rem;color:#8fa4bb}
+
+  /* floating whatsapp */
+  .wa{position:fixed;bottom:26px;right:26px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:90;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  @media(max-width:980px){
+    .intro-grid,.cat-grid,.grid-3,.stats-grid,.feat-grid,.test-grid,.foot-grid{grid-template-columns:repeat(2,1fr)}
+    .menu{display:none}
+    .burger{display:block}
+    .hero h1{font-size:2rem}
+  }
+  @media(max-width:560px){
+    .intro-grid,.cat-grid,.grid-3,.stats-grid,.feat-grid,.test-grid,.foot-grid{grid-template-columns:1fr}
+    .sec-title{font-size:1.5rem}
+    .hero h1{font-size:1.7rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="mark"><i class="fa-solid fa-building-columns"></i></span><div><b>Flo</b><span>Estates</span></div></a>
+    <nav class="menu">
+      <a href="#projects">المشاريع</a>
+      <a href="#resale">إعادة البيع</a>
+      <a href="#lands">الأراضي</a>
+      <a href="#features">المدونة</a>
+      <a href="#" class="hot">العروض</a>
+      <a href="#faq">الأسعار</a>
+      <a href="#about">من نحن</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" title="تسجيل الدخول"><i class="fa-solid fa-right-to-bracket"></i></button>
+      <button class="icon-btn" title="صرف العملات"><i class="fa-solid fa-coins"></i></button>
+      <button class="icon-btn" title="اللغة"><i class="fa-solid fa-language"></i></button>
+      <a href="#" class="btn"><i class="fa-solid fa-plus"></i> أضف عقارك</a>
+      <button class="burger"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1>شريكك الاستراتيجي لنشاط عقاري أكثر نمواً ونجاحاً</h1>
+    <p>تبحث عن المشاريع العقارية المرموقة، أو فرص إعادة البيع المتميزة، أو الاستثمار في الأراضي القابلة للإعمار؟ نوفر لك تغطية شاملة تلبي تطلعاتك وتضمن لك التفوق في السوق.</p>
+    <a href="#projects" class="btn lg"><i class="fa-solid fa-magnifying-glass"></i> استكشف العقارات</a>
+    <div class="hero-search">
+      <select><option>نوع العقار</option><option>شقة</option><option>فيلا</option><option>أرض</option><option>مكتب</option></select>
+      <select><option>المدينة</option><option>اسطنبول</option><option>دبي</option><option>أنقرة</option></select>
+      <input placeholder="السعر الأقصى">
+      <button class="btn"><i class="fa-solid fa-magnifying-glass"></i> بحث</button>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="sec intro">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="intro-card"><i class="fa-solid fa-handshake-angle"></i><h3>الحل الأمثل لأهدافك</h3><p>نقدم لك الحل الأمثل لتحقيق أهدافك في عالم العقارات، من المشاريع المرموقة إلى فرص إعادة البيع المتميزة.</p></div>
+      <div class="intro-card"><i class="fa-solid fa-layer-group"></i><h3>تغطية شاملة</h3><p>نغطي كافة الجوانب من المشاريع العقارية وصولاً إلى الأراضي الزراعية والقابلة للإعمار.</p></div>
+      <div class="intro-card"><i class="fa-solid fa-shield-halved"></i><h3>صفقات مضمونة</h3><p>نضمن لك صفقات ناجحة وعمولات مضمونة، مع الحفاظ على السرية التامة وحقوق شركتك.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-title">تصفّح حسب الفئة</h2>
+    <div class="cat-grid">
+      <div class="cat"><i class="fa-solid fa-house-chimney"></i><h4>فلل مميزة</h4></div>
+      <div class="cat"><i class="fa-solid fa-building"></i><h4>شقق دوبلكس</h4></div>
+      <div class="cat"><i class="fa-solid fa-store"></i><h4>مكاتب ومتاجر</h4></div>
+      <div class="cat"><i class="fa-solid fa-laptop-house"></i><h4>مكتب منزلي</h4></div>
+      <div class="cat"><i class="fa-solid fa-water"></i><h4>اطلالات بحرية</h4></div>
+      <div class="cat"><i class="fa-solid fa-key"></i><h4>مشاريع جاهزة</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="sec" id="projects" style="background:#fff">
+  <div class="wrap">
+    <h2 class="sec-title">مشاريع مميزة</h2>
+    <div class="grid-3">
+      <div class="pcard">
+        <div class="ph"><span class="badge feat">مميز</span><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <h3>1225 - فلل بيرلا أرناؤوط كوي</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الأوروبية / أرناؤوط كوي</div>
+          <div class="pay"><span>طرق الدفع: <b>نقداً</b></span><span class="tag">⭐ 5.0</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge feat">مميز</span><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <h3>1086 - بوغاتي ريزيدانسيز</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> دبي / وسط مدينة دبي</div>
+          <div class="pay"><span>طرق الدفع: <b>نقداً</b></span><span class="tag">⭐ 4.6</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge disc">خصم على الكاش 12%</span><span class="badge feat">مميز</span><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <h3>1085 - مرسيدس بنز بليسز</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> دبي / وسط مدينة دبي</div>
+          <div class="pay"><span>أقساط <b>12 شهر</b> | الدفعة الأولى <b>40%</b></span><span class="tag">⭐ 4.7</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta"><a href="#" class="btn btn-outline">عرض المزيد من المشاريع <i class="fa-solid fa-arrow-left"></i></a></div>
+  </div>
+</section>
+
+<!-- EXCLUSIVE APARTMENTS -->
+<section class="sec" id="resale">
+  <div class="wrap">
+    <h2 class="sec-title">الشقق الحصرية</h2>
+    <div class="grid-3">
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">3,529,962 <small style="font-size:.7rem">TRY</small></div>
+          <h3>SH288 - شقة حصرية للبيع غير مستخدمة في اسنيورت بإسطنبول</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الأوروبية / اسنيورت</div>
+          <div class="specs"><span><i class="fa-solid fa-bed"></i> 2+1</span><span><i class="fa-solid fa-vector-square"></i> 110 م²</span><span><i class="fa-solid fa-bath"></i> 2</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">44,994,414 <small style="font-size:.7rem">TRY</small></div>
+          <h3>SH287 - شقة سوبر ديلوكس في مجمع إعمار سكوير بإسكودار</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الآسيوية / اسكودار</div>
+          <div class="specs"><span><i class="fa-solid fa-bed"></i> 3+1</span><span><i class="fa-solid fa-vector-square"></i> 192 م²</span><span><i class="fa-solid fa-bath"></i> 2</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><span class="badge feat" style="right:auto;left:12px">مميز</span><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">31,265,382 <small style="font-size:.7rem">TRY</small></div>
+          <h3>SH290 - فيلا جديدة غير مستخدمة للبيع في شيلا</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الآسيوية / شيلا</div>
+          <div class="specs"><span><i class="fa-solid fa-bed"></i> 4+1</span><span><i class="fa-solid fa-vector-square"></i> 311 م²</span><span><i class="fa-solid fa-bath"></i> 3</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta"><a href="#" class="btn btn-outline">عرض المزيد من العقارات <i class="fa-solid fa-arrow-left"></i></a></div>
+  </div>
+</section>
+
+<!-- EXCLUSIVE LANDS -->
+<section class="sec" id="lands" style="background:#fff">
+  <div class="wrap">
+    <h2 class="sec-title">الأراضي الحصرية</h2>
+    <div class="grid-3">
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">10,086 <small style="font-size:.7rem">TRY / m²</small></div>
+          <h3>L198 - أرض أرناؤوط كوي</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الأوروبية / أرناؤوط كوي / Çilingir</div>
+          <div class="specs"><span><i class="fa-solid fa-vector-square"></i> 350 م²</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">11,699 <small style="font-size:.7rem">TRY / m²</small></div>
+          <h3>L213 - أرض للبيع في أرناؤوط كوي قرب مطار إسطنبول</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الأوروبية / أرناؤوط كوي / Yeniköy</div>
+          <div class="specs"><span><i class="fa-solid fa-vector-square"></i> 965 م²</span></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><span class="badge excl">حصري</span><img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="pbody">
+          <div class="price">6,051 <small style="font-size:.7rem">TRY / m²</small></div>
+          <h3>L219 - أرض مباشرة على قناة اسطنبول في أرناؤوط كوي</h3>
+          <div class="loc"><i class="fa-solid fa-location-dot"></i> اسطنبول الأوروبية / أرناؤوط كوي / Dursunköy</div>
+          <div class="specs"><span><i class="fa-solid fa-vector-square"></i> 500 م²</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta"><a href="#" class="btn btn-outline">عرض المزيد من الأراضي <i class="fa-solid fa-arrow-left"></i></a></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat c1"><div><div class="num">+172</div><div class="lbl">مستخدم</div></div><div class="si"><i class="fa-solid fa-user-tie"></i></div></div>
+      <div class="stat c2"><div><div class="num">+121</div><div class="lbl">أراضي</div></div><div class="si"><i class="fa-solid fa-map-location-dot"></i></div></div>
+      <div class="stat c3"><div><div class="num">+105</div><div class="lbl">إعادة بيع</div></div><div class="si"><i class="fa-solid fa-arrows-rotate"></i></div></div>
+      <div class="stat c4"><div><div class="num">+180</div><div class="lbl">مشروع</div></div><div class="si"><i class="fa-solid fa-city"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / WHY US -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <h2 class="sec-title">لماذا تختار FloEstates؟</h2>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fi"><i class="fa-solid fa-magnifying-glass-chart"></i></div><div><h3>البحث الذكي والشامل</h3><p>بحث دقيق وذكي لجميع العقارات مع كامل المعلومات: أرقام التواصل، الصور، والفيديوهات.</p></div></div>
+      <div class="fcard"><div class="fi"><i class="fa-solid fa-file-pdf"></i></div><div><h3>ملف PDF باسم شركتك</h3><p>استخرج ملف PDF لأي عقار مع شعار شركتك وألوانها لتقديم عروض احترافية تحمل هويتك.</p></div></div>
+      <div class="fcard"><div class="fi"><i class="fa-solid fa-code"></i></div><div><h3>خدمة API لموقعك</h3><p>زوّد موقعك بجميع المشاريع والأراضي وخدمات إعادة البيع مع تحديثات دورية مستمرة.</p></div></div>
+      <div class="fcard"><div class="fi"><i class="fa-solid fa-headset"></i></div><div><h3>دعم فوري مجاني</h3><p>فريق من الخبراء متاح على مدار الساعة عبر الدردشة لتقديم استجابة سريعة ودقيقة.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:#fff">
+  <div class="wrap" style="max-width:860px">
+    <h2 class="sec-title center">الأسئلة الشائعة</h2>
+    <div class="faq-item"><div class="faq-q">ما هو الحد الأدنى لقيمة العقار المطلوبة للحصول على الجنسية التركية في 2026؟ <i class="fa-solid fa-chevron-down"></i></div><div class="faq-a"><p>يبلغ الحد الأدنى الحالي 400,000 دولار أمريكي للعقار المؤهل، مع الالتزام بعدم بيعه لمدة 3 سنوات.</p></div></div>
+    <div class="faq-item"><div class="faq-q">من هو المؤهل للتقدم بطلب الجنسية التركية عبر الاستثمار العقاري؟ <i class="fa-solid fa-chevron-down"></i></div><div class="faq-a"><p>أي مستثمر أجنبي يشتري عقاراً بالقيمة المطلوبة ويحصل على شهادة التوافق، ويشمل ذلك الزوج/الزوجة والأبناء دون سن 18.</p></div></div>
+    <div class="faq-item"><div class="faq-q">كيف تختلف الإقامة التركية عبر الاستثمار عن المواطنة عبر الاستثمار؟ <i class="fa-solid fa-chevron-down"></i></div><div class="faq-a"><p>الإقامة تمنحك حق السكن والتنقل، بينما المواطنة تمنحك جواز سفر تركي وكامل الحقوق المدنية.</p></div></div>
+    <div class="faq-item"><div class="faq-q">أين يمكنني التحقق من أسعار العقارات الحالية في إسطنبول قبل الشراء؟ <i class="fa-solid fa-chevron-down"></i></div><div class="faq-a"><p>عبر منصة FloEstates يمكنك مقارنة الأسعار الحقيقية المحدثة بحسب المنطقة ونوع العقار في بحث واحد.</p></div></div>
+    <div class="faq-item"><div class="faq-q">بمن يمكنني الوثوق لشراء عقار في تركيا دون التعرض للاحتيال؟ <i class="fa-solid fa-chevron-down"></i></div><div class="faq-a"><p>نوفر لك عقارات موثقة وشركاء معتمدين مع ضمان حفظ الحقوق والسرية التامة في كل صفقة.</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-title center">الشهادات والتوصيات</h2>
+    <div class="test-grid">
+      <div class="tcard"><div class="stars">★★★★★</div><p>تجربة رائعة مع FloEstates. الفريق محترف وسريع الاستجابة ومفيد جداً طوال العملية، وقدّموا خيارات استثمارية ممتازة بنصائح صادقة.</p><div class="tuser"><div class="av">M</div><div><b>Majd Kalpoun</b><small>قبل 7 أشهر</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>شركة ممتازة جداً. الموظفون محترمون وذوو خبرة في هذا المجال. أنصح بشدة بالتعامل معهم.</p><div class="tuser"><div class="av">M</div><div><b>Mahmoud Sawah</b><small>قبل 7 أشهر</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>خدمة مبهرة ودعم عالي الجودة. الفريق منظّم ويتعامل باحترافية عالية. خيار رائع لكل من يبحث عن حلول عقارية متميزة.</p><div class="tuser"><div class="av">N</div><div><b>Nuray Zabun</b><small>قبل سنة</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" id="about">
+  <div class="cta wrap" style="max-width:1160px">
+    <h2>انضم إلى منصة FloEstates اليوم</h2>
+    <p>ثق بنا لنوجهك خلال صفقات ناجحة واستثمارات آمنة. بيئة عمل آمنة ومبتكرة تمكّن الشركات والوسطاء العقاريين.</p>
+    <a href="#" class="btn lg"><i class="fa-solid fa-user-plus"></i> ابدأ الآن مجاناً</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-contact">
+        <a href="#" class="logo"><span class="mark"><i class="fa-solid fa-building-columns"></i></span><div><b>Flo</b><span style="color:var(--orange)">Estates</span></div></a>
+        <p><i class="fa-solid fa-location-dot"></i> العنوان في تركيا: Kayabaşı, Adnan Menderes Bulvarı, Başakşehir / İstanbul</p>
+        <p><i class="fa-solid fa-phone"></i> +90 549 606 80 80</p>
+        <p><i class="fa-solid fa-envelope"></i> info@floestates.com</p>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div><h4>عقارات المنصة</h4><ul>
+        <li><a href="#lands">الأراضي الحصرية</a></li>
+        <li><a href="#resale">الشقق الحصرية</a></li>
+        <li><a href="#projects">مشاريع مميزة</a></li>
+        <li><a href="#">مكاتب تجارية</a></li>
+        <li><a href="#">مكتب منزلي</a></li>
+      </ul></div>
+      <div><h4>FloEstates</h4><ul>
+        <li><a href="#faq">الأسعار</a></li>
+        <li><a href="#features">خدمات المنصة</a></li>
+        <li><a href="#about">نبذة عنا</a></li>
+        <li><a href="#">اتصل بنا</a></li>
+        <li><a href="#">صرف العملات</a></li>
+      </ul></div>
+      <div><h4>روابط مهمة</h4><ul>
+        <li><a href="#">سجل التغييرات</a></li>
+        <li><a href="#">سياسة الخصوصية</a></li>
+        <li><a href="#">شروط الاستخدام</a></li>
+        <li><a href="#">معلومات الشركة القانونية</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">جميع الحقوق محفوظة لـ FloEstates © 2026</div>
+  </div>
+</footer>
+
+<a href="#" class="wa" title="تواصل عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
+  });
+  // simple reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.pcard,.cat,.fcard,.tcard,.intro-card,.stat').forEach(el=>{
+    el.style.opacity=0;el.style.transform='translateY(24px)';el.style.transition='.6s ease';io.observe(el);
+  });
+</script>
+</body>
+</html>
