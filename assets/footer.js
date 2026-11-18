@@ -17,8 +17,8 @@ document.getElementById('footer').innerHTML = `
       </ul></div>
       <div><h4>FloEstates</h4><ul>
         <li><a href="about.html">من نحن</a></li>
-        <li><a href="index.html#features">خدمات المنصة</a></li>
-        <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="pricing.html">الأسعار</a></li>
         <li><a href="contact.html">اتصل بنا</a></li>
       </ul></div>
       <div><h4>روابط مهمة</h4><ul>
