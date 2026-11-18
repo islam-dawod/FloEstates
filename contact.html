@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اتصل بنا - تواصل مع فريق FloEstates العقاري | FloEstates</title>
+<meta name="description" content="تواصل مع فريق FloEstates العقاري. اتصل بنا عبر الهاتف أو واتساب أو البريد الإلكتروني، أو أرسل استفسارك عبر النموذج وسنرد عليك بأسرع وقت.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .page-hero{--hero-img:url('assets/img/p4.webp')}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:start}
+  .contact-form{background:#fff;border:1px solid var(--border);border-radius:18px;padding:34px;box-shadow:var(--shadow)}
+  .contact-form h2{color:var(--heading);font-size:1.4rem;margin-bottom:8px}
+  .contact-form .sub{color:#7b8a91;margin-bottom:24px;font-size:.92rem}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .finput{width:100%;background:#f4f7fc;border:1px solid var(--border);border-radius:10px;padding:13px 15px;margin-bottom:14px;font-family:inherit;font-size:.92rem;color:var(--text)}
+  textarea.finput{resize:vertical;min-height:130px}
+  .finfo{display:flex;flex-direction:column;gap:16px}
+  .info-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .info-card .ic{flex:none;width:52px;height:52px;border-radius:13px;background:#e7eefb;color:var(--navy);display:grid;place-items:center;font-size:1.3rem}
+  .info-card h3{color:var(--heading);font-size:1.02rem;margin-bottom:4px}
+  .info-card p,.info-card a{font-size:.9rem;color:var(--text);line-height:1.7}
+  .info-card a:hover{color:var(--orange)}
+  .soc-row{display:flex;gap:10px;margin-top:4px}
+  .soc-row a{width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;transition:.2s}
+  .soc-row a:hover{background:var(--orange)}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><span class="mark"><i class="fa-solid fa-building-columns"></i></span><div><b>Flo</b><span>Estates</span></div></a>
+    <nav class="menu">
+      <a href="projects.html">المشاريع</a>
+      <a href="resale.html">إعادة البيع</a>
+      <a href="lands.html">الأراضي</a>
+      <a href="offers.html" class="hot">العروض</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html" class="active">اتصل بنا</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" title="تسجيل الدخول"><i class="fa-solid fa-right-to-bracket"></i></button>
+      <button class="icon-btn" title="اللغة"><i class="fa-solid fa-language"></i></button>
+      <a href="#" class="btn"><i class="fa-solid fa-plus"></i> أضف عقارك</a>
+      <button class="burger"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">الرئيسية</a> / اتصل بنا</div>
+    <h1>تواصل مع فريق FloEstates</h1>
+    <p>نحن هنا لمساعدتك في كل خطوة. تواصل معنا عبر الهاتف أو واتساب أو البريد الإلكتروني، أو أرسل استفسارك عبر النموذج وسيرد عليك فريقنا بأسرع وقت.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- form -->
+      <div class="contact-form">
+        <h2>أرسل لنا رسالة</h2>
+        <div class="sub">املأ النموذج التالي وسنتواصل معك في أقرب وقت ممكن.</div>
+        <form onsubmit="return sendMsg(event)">
+          <div class="frow">
+            <input class="finput" placeholder="الاسم الكامل *" required>
+            <input class="finput" placeholder="رقم الهاتف *" required>
+          </div>
+          <div class="frow">
+            <input class="finput" type="email" placeholder="البريد الإلكتروني">
+            <select class="finput"><option value="">نوع الاستفسار</option><option>شراء عقار</option><option>استثمار</option><option>إضافة عقار</option><option>شراكة / API</option><option>أخرى</option></select>
+          </div>
+          <input class="finput" placeholder="الموضوع">
+          <textarea class="finput" placeholder="رسالتك *" required></textarea>
+          <button type="submit" class="btn lg" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
+        </form>
+      </div>
+
+      <!-- info -->
+      <div class="finfo">
+        <div class="info-card"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><h3>الهاتف</h3><p><a href="tel:+905496068080" dir="ltr">+90 549 606 80 80</a></p></div></div>
+        <div class="info-card"><div class="ic"><i class="fa-brands fa-whatsapp"></i></div><div><h3>واتساب</h3><p><a href="https://wa.me/905496068080" dir="ltr">+90 549 606 80 80</a></p></div></div>
+        <div class="info-card"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><h3>البريد الإلكتروني</h3><p><a href="mailto:info@floestates.com">info@floestates.com</a></p></div></div>
+        <div class="info-card"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><h3>العنوان في تركيا</h3><p>Kuzey yakası, Kayabaşı, Adnan Menderes Bulvarı, Blok A3, Ofis No:35, 34494 Başakşehir / İstanbul</p></div></div>
+        <div class="info-card"><div class="ic"><i class="fa-solid fa-clock"></i></div><div><h3>ساعات العمل</h3><p>الإثنين - السبت: 9:00 صباحاً - 6:00 مساءً</p></div></div>
+        <div class="info-card"><div class="ic"><i class="fa-solid fa-share-nodes"></i></div><div><h3>تابعنا</h3><div class="soc-row"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/905496068080"><i class="fa-brands fa-whatsapp"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="block" style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:0;overflow:hidden;box-shadow:var(--shadow)">
+      <iframe style="border:0;width:100%;height:380px;display:block" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=28.78%2C41.08%2C28.86%2C41.12&layer=mapnik&marker=41.10%2C28.82"></iframe>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<a href="https://wa.me/905496068080" class="wa" title="تواصل عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="assets/app.js"></script>
+<script src="assets/footer.js"></script>
+<script>
+  function sendMsg(e){e.preventDefault();alert('تم إرسال رسالتك بنجاح! سيتواصل معك فريق FloEstates قريباً.');e.target.reset();return false;}
+</script>
+</body>
+</html>

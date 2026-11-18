@@ -11,18 +11,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  .hero{position:relative;min-height:560px;display:flex;align-items:center;color:#fff;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,22,50,.92),rgba(13,30,66,.55)),url('assets/img/p13.webp') center/cover}
-  .hero-inner{position:relative;z-index:2;max-width:640px}
-  .hero h1{font-size:2.7rem;line-height:1.35;font-weight:700;margin-bottom:22px}
-  .hero p{font-size:1.12rem;color:#d7e2f3;margin-bottom:30px;font-weight:300}
-  .hero .btn.lg{padding:15px 34px;font-size:1.05rem}
-  .hero-search{margin-top:34px;background:#fff;border-radius:16px;padding:10px;display:flex;gap:8px;box-shadow:var(--shadow-lg);flex-wrap:wrap}
-  .hero-search select,.hero-search input{flex:1;min-width:120px;border:none;background:#f4f7fc;color:var(--text);font-family:inherit;padding:13px 16px;border-radius:10px;font-size:.92rem}
+  .hero-slider{position:relative;height:600px;overflow:hidden}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;display:flex;align-items:center;pointer-events:none}
+  .slide.active{opacity:1;pointer-events:auto}
+  .slide::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(10,22,50,.92),rgba(13,30,66,.5)),var(--img) center/cover;transform:scale(1.08);transition:transform 7s ease}
+  .slide.active::before{transform:scale(1)}
+  .slide-inner{position:relative;z-index:2;color:#fff;max-width:650px}
+  .slide-inner .tagline{display:inline-block;background:rgba(245,144,30,.2);color:#ffd9b0;border:1px solid rgba(245,144,30,.4);padding:6px 16px;border-radius:30px;font-size:.85rem;margin-bottom:18px}
+  .slide h1{font-size:2.7rem;line-height:1.35;font-weight:700;margin-bottom:20px}
+  .slide p{font-size:1.12rem;color:#d7e2f3;margin-bottom:28px;font-weight:300}
+  .slide .btn.lg{padding:15px 34px;font-size:1.05rem}
+  .slider-arrow{position:absolute;top:45%;transform:translateY(-50%);z-index:6;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(4px);transition:.25s;font-size:1.05rem}
+  .slider-arrow:hover{background:var(--orange);border-color:var(--orange)}
+  .slider-arrow.prev{right:24px}
+  .slider-arrow.next{left:24px}
+  .slider-dots{position:absolute;bottom:34px;left:0;right:0;display:flex;gap:10px;justify-content:center;z-index:6}
+  .slider-dots button{width:12px;height:12px;border-radius:50%;border:none;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s;padding:0}
+  .slider-dots button.active{background:var(--orange);width:32px;border-radius:6px}
+  .search-band{position:relative;z-index:10;margin-top:-46px}
+  .hero-search{background:#fff;border-radius:16px;padding:10px;display:flex;gap:8px;box-shadow:var(--shadow-lg);flex-wrap:wrap}
+  .hero-search select,.hero-search input{flex:1;min-width:120px;border:none;background:#f4f7fc;color:var(--text);font-family:inherit;padding:14px 16px;border-radius:10px;font-size:.92rem}
   .hero-search .btn{border-radius:10px}
   .intro{background:#fff;border-bottom:1px solid var(--border)}
-  @media(max-width:980px){.hero h1{font-size:2rem}}
-  @media(max-width:560px){.hero h1{font-size:1.7rem}}
+  @media(max-width:980px){.hero-slider{height:520px}.slide h1{font-size:2rem}}
+  @media(max-width:560px){.hero-slider{height:500px}.slide h1{font-size:1.6rem}.slide p{font-size:1rem}.slider-arrow{width:40px;height:40px}}
 </style>
 </head>
 <body>
@@ -48,11 +60,46 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-inner">
-    <h1>شريكك الاستراتيجي لنشاط عقاري أكثر نمواً ونجاحاً</h1>
-    <p>تبحث عن المشاريع العقارية المرموقة، أو فرص إعادة البيع المتميزة، أو الاستثمار في الأراضي القابلة للإعمار؟ نوفر لك تغطية شاملة تلبي تطلعاتك وتضمن لك التفوق في السوق.</p>
-    <a href="projects.html" class="btn lg"><i class="fa-solid fa-magnifying-glass"></i> استكشف العقارات</a>
+<section class="hero-slider" id="heroSlider">
+  <div class="slide active" style="--img:url('assets/img/p13.webp')">
+    <div class="wrap slide-inner">
+      <span class="tagline">منصتك العقارية الأولى</span>
+      <h1>شريكك الاستراتيجي لنشاط عقاري أكثر نمواً ونجاحاً</h1>
+      <p>تبحث عن المشاريع العقارية المرموقة، أو فرص إعادة البيع المتميزة، أو الاستثمار في الأراضي القابلة للإعمار؟ نوفر لك تغطية شاملة تضمن لك التفوق في السوق.</p>
+      <a href="projects.html" class="btn lg"><i class="fa-solid fa-magnifying-glass"></i> استكشف العقارات</a>
+    </div>
+  </div>
+  <div class="slide" style="--img:url('assets/img/p2.webp')">
+    <div class="wrap slide-inner">
+      <span class="tagline">مشاريع مميزة في تركيا ودبي</span>
+      <h1>استثمر في أرقى المشاريع العقارية الجديدة</h1>
+      <p>مشاريع سكنية وتجارية معتمدة بأسعار تنافسية وخطط دفع مرنة وخصومات حصرية على الدفع النقدي، في أفضل مواقع إسطنبول ودبي.</p>
+      <a href="projects.html" class="btn lg"><i class="fa-solid fa-city"></i> تصفّح المشاريع</a>
+    </div>
+  </div>
+  <div class="slide" style="--img:url('assets/img/p20.webp')">
+    <div class="wrap slide-inner">
+      <span class="tagline">فلل وشقق حصرية</span>
+      <h1>عقارات حصرية مؤهلة للجنسية التركية</h1>
+      <p>فلل وشقق جاهزة غير مستخدمة بإطلالات مميزة وخصوصية عالية، مع ضمان حفظ الحقوق والسرية التامة في كل صفقة.</p>
+      <a href="resale.html" class="btn lg"><i class="fa-solid fa-key"></i> اكتشف العروض الحصرية</a>
+    </div>
+  </div>
+  <div class="slide" style="--img:url('assets/img/p7.webp')">
+    <div class="wrap slide-inner">
+      <span class="tagline">أراضٍ استثمارية</span>
+      <h1>أراضٍ قابلة للإعمار بمواقع استراتيجية</h1>
+      <p>أراضٍ قرب مطار إسطنبول وقناة إسطنبول بفرص استثمارية واعدة وعوائد مرتفعة، مع تعامل حصري يسهّل عليك إغلاق الصفقة.</p>
+      <a href="lands.html" class="btn lg"><i class="fa-solid fa-map-location-dot"></i> استعرض الأراضي</a>
+    </div>
+  </div>
+  <button class="slider-arrow prev" onclick="heroMove(-1)" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
+  <button class="slider-arrow next" onclick="heroMove(1)" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="slider-dots" id="heroDots"></div>
+</section>
+
+<div class="search-band">
+  <div class="wrap">
     <div class="hero-search">
       <select><option>نوع العقار</option><option>شقة</option><option>فيلا</option><option>أرض</option><option>مكتب</option></select>
       <select><option>المدينة</option><option>اسطنبول</option><option>دبي</option><option>أنقرة</option></select>
@@ -60,7 +107,7 @@
       <a href="projects.html" class="btn"><i class="fa-solid fa-magnifying-glass"></i> بحث</a>
     </div>
   </div>
-</section>
+</div>
 
 <section class="sec intro">
   <div class="wrap">
@@ -239,5 +286,18 @@
 <a href="#" class="wa" title="تواصل عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script src="assets/app.js"></script>
+<script>
+  (function(){
+    const slides=[...document.querySelectorAll('#heroSlider .slide')];
+    const dotsBox=document.getElementById('heroDots');
+    let cur=0,timer;
+    slides.forEach((_,i)=>{const b=document.createElement('button');if(i===0)b.className='active';b.onclick=()=>go(i);dotsBox.appendChild(b);});
+    const dots=[...dotsBox.children];
+    function go(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dots[cur].classList.add('active');reset();}
+    window.heroMove=d=>go(cur+d);
+    function reset(){clearInterval(timer);timer=setInterval(()=>go(cur+1),6000);}
+    reset();
+  })();
+</script>
 </body>
 </html>
