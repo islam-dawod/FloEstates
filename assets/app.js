@@ -9,6 +9,14 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
 document.querySelectorAll('.pcard,.cat,.fcard,.tcard,.intro-card,.stat,.vm,.values li').forEach(el=>{
   el.style.opacity=0;el.style.transform='translateY(24px)';el.style.transition='.6s ease';io.observe(el);
 });
+// inject "تواصل معنا" into the mobile menu (hidden on desktop via CSS)
+const menuEl=document.querySelector('.menu');
+if(menuEl && !menuEl.querySelector('.menu-contact')){
+  const a=document.createElement('a');
+  a.href='contact.html';a.className='menu-contact';
+  a.innerHTML='<i class="fa-solid fa-envelope"></i> تواصل معنا';
+  menuEl.appendChild(a);
+}
 // mobile menu toggle
 const burger=document.querySelector('.burger'),menu=document.querySelector('.menu');
 if(burger&&menu){burger.addEventListener('click',()=>{
