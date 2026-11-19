@@ -7,9 +7,9 @@ document.getElementById('footer').innerHTML = `
         <p><i class="fa-solid fa-location-dot"></i> العنوان في تركيا: Kayabaşı, Adnan Menderes Bulvarı, Başakşehir / İstanbul</p>
         <p><i class="fa-solid fa-phone"></i> +90 549 606 80 80</p>
         <p><i class="fa-solid fa-envelope"></i> info@floestates.com</p>
-        <div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-whatsapp"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div>
+        <div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/905496068080"><i class="fa-brands fa-whatsapp"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div>
       </div>
-      <div><h4>عقارات المنصة</h4><ul>
+      <div><h4>عقاراتنا</h4><ul>
         <li><a href="lands.html">الأراضي الحصرية</a></li>
         <li><a href="resale.html">الشقق الحصرية</a></li>
         <li><a href="projects.html">مشاريع مميزة</a></li>
@@ -17,12 +17,9 @@ document.getElementById('footer').innerHTML = `
       </ul></div>
       <div><h4>FloEstates</h4><ul>
         <li><a href="about.html">من نحن</a></li>
-        <li><a href="services.html">خدماتنا</a></li>
-        <li><a href="pricing.html">الأسعار</a></li>
         <li><a href="contact.html">اتصل بنا</a></li>
       </ul></div>
       <div><h4>روابط مهمة</h4><ul>
-        <li><a href="#">سجل التغييرات</a></li>
         <li><a href="#">سياسة الخصوصية</a></li>
         <li><a href="#">شروط الاستخدام</a></li>
       </ul></div>

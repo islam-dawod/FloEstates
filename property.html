@@ -24,9 +24,9 @@
       <a href="contact.html">اتصل بنا</a>
     </nav>
     <div class="nav-right">
-      <button class="icon-btn" title="تسجيل الدخول"><i class="fa-solid fa-right-to-bracket"></i></button>
+      
       <button class="icon-btn" title="اللغة"><i class="fa-solid fa-language"></i></button>
-      <a href="#" class="btn"><i class="fa-solid fa-plus"></i> أضف عقارك</a>
+      <a href="contact.html" class="btn"><i class="fa-solid fa-envelope"></i> تواصل معنا</a>
       <button class="burger"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
@@ -78,7 +78,7 @@
   const shortTitle=p.title.split(' - ').slice(-1)[0];
   let desc='';
   if(p.cat==='land'){
-    desc=`<p>${p.title} — قطعة أرض ${p.landtype} بموقع استراتيجي في ${p.loc}، تمثل فرصة استثمارية واعدة بعوائد مرتفعة.</p><p style="margin-top:14px">تتميز الأرض بسهولة الوصول وقربها من الخدمات والبنية التحتية، مع تعامل حصري يسهّل عليك التفاوض وإغلاق الصفقة بأمان وضمان حفظ العمولة.</p>`;
+    desc=`<p>${p.title} — قطعة أرض ${p.landtype} بموقع استراتيجي في ${p.loc}، تمثل فرصة استثمارية واعدة بعوائد مرتفعة.</p><p style="margin-top:14px">تتميز الأرض بسهولة الوصول وقربها من الخدمات والبنية التحتية، مع تعامل حصري يسهّل عليك التفاوض وإتمام الشراء بأمان وشفافية.</p>`;
   }else if(p.cat==='project'){
     desc=`<p>${p.title} — مشروع عقاري متكامل في ${p.loc} يوفر وحدات سكنية بتصاميم عصرية ومساحات متنوعة (${p.area})، مع خدمات متكاملة وخطط دفع مرنة.</p><p style="margin-top:14px">موقع استراتيجي قريب من المواصلات والخدمات، وفرص إعادة بيع ذات أرباح عالية عند التسليم. ${p.discount?'يتوفر حالياً '+p.discount+' عند الدفع النقدي.':''}</p>`;
   }else if(p.cat==='offer'){
@@ -174,7 +174,6 @@
               <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب</button>
             </form>
           </div>
-          <a href="#" class="btn btn-outline" style="width:100%;justify-content:center"><i class="fa-solid fa-file-pdf"></i> تصدير PDF</a>
         </div>
       </aside>
     </div>

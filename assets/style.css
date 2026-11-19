@@ -97,7 +97,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdr
 
 /* stats */
 .stats{background:linear-gradient(120deg,#0f2452,#1b3c7e);color:#fff}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;display:flex;align-items:center;gap:18px;position:relative;overflow:hidden}
 .stat::before{content:"";position:absolute;top:0;right:0;left:0;height:4px}
 .stat.c1::before{background:var(--blue)} .stat.c2::before{background:var(--green)}
